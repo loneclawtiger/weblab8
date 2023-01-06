@@ -1,0 +1,21 @@
+<div class="dataDiv">
+    <h1 class="text-light">Manipulate Data</h1>
+    <div class="row">
+        <table class="dataTable table text-light mt-4 col-lg-12">
+            <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Rating</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in msgJson">
+                <td>{{x.id}}</td>
+                <td>{{x.Name | uppercase}}</td>
+                <td>{{x.Category}}</td>
+                <td>{{x.Rating}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
