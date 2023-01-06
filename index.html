@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Angular SPA | WSD LAB 8</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js" integrity="sha512-y1qD3hz/IAf8W4+/UMLZ+CN6LIoUGi7srWJ3r1R17Hid8x0yXe+1B5ZelkaL1Mjzedzu0Cg3HBvDG02SAgSzBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body onload="onLoadAnim(), checkLogin()" onresize="remClass()">
+<div class="main-cont" id="mainCont">
+    <div class="login-form d-flex flex-column justify-content-center" id="login">
+        <h1 class="text-light">LOGIN</h1>
+        <div class="inputField">
+            <label for="username" class="text-light">Username</label>
+            <input type="text" name="username" id="username" class="form-control" placeholder="Enter username">
+            <span id="nameResp" class="resp"></span>
+        </div>
+        <div class="inputField">
+            <label for="password" class="text-light mt-2">Password</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Enter password">
+            <span id="passResp" class="resp"></span>
+        </div>
+        <div class="inputField">
+            <label for="img" class="mt-2 text-light">Profile Image</label>
+            <input type="file" name="img" id="img" class="form-control" style="background-color: transparent; border: none; color: white;">
+        </div>
+        <div class="btnField">
+            <div class="btnMen">
+                <button onclick="checkUser()">Login</button>
+            </div>
+            <span id="btnResp" class="resp"></span>
+        </div>
+    </div>
+    <div class="side-nav col-lg-1 d-none" id="sideNav">
+        <div class="side-btns">
+            <h3 class="text-light mt-2" id="menuH3">MENU</h3>
+            <div class="menu-btns d-flex" style="gap: 10px;">
+                <div class="btnMen">
+                    <button onclick="clickAdd()"><span class="d-xs-none">ADD</span> <i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div class="btnMen">
+                    <button onclick="clickView()"><span class="d-xs-none">VIEW</span> <i class="fa-solid fa-database"></i></button>
+                </div>
+                <div class="btnMen">
+                    <button onclick="logout()"><span class="d-xs-none">Logout</span> <i class="fa-solid fa-right-from-bracket"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-form col-lg-11 text-light d-none d-flex flex-column" id="MidForm">
+        <div class="topBar d-flex justify-content-between p-2">
+            <div class="dash">
+                <h3>DASHBOARD</h3>
+            </div>
+            <div class="profile d-flex justify-content-around" style="width: max-content; gap: 1em">
+                <h4 id="profName" class="text-light text-uppercase d-xs-none d-md-none d-sm-none d-lg-block"></h4>
+                <img src="" alt="profileImg" id="profileImg" style="border-radius: 100%;">
+            </div>
+        </div>
+        <div class="tabs mt-5"  ng-app="msgApp">
+            <div class="row m-0 justify-content-center" style="column-gap: 9em; row-gap: 2em;">
+                <div class="col-lg-5 col-md-10 col-sm-10 col-xs-10 tab" id="msgTab" ng-controller="msgCtrl" style="display: grid; place-items: center;">
+                    <div class="beforeBtn">
+                        <a href="#!msg" class="btn btn-outline-light" onclick="displayNotif()" id="dispBtn">Display Notifications</a>
+                    </div>
+                    <div class="afterCont d-flex flex-column justify-content-center align-items-center" ng-view>
+
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-10 col-xs-10 tab d-flex align-items-center justify-content-between" id="profTab">
+                    <h4 id="profGreeting" class="text-light font-weight-bold"></h4>
+                    <img src="" alt="profileImage" id="tabProfImg">
+                </div>
+                <div class="col-lg-11 col-md-10 col-xs-10 tab" id="dataTab" ng-app="dataApp">
+                    <div class="data" ng-controller="dataCtrl">
+                        <a href="#!dataMan" id="dataMan" class="d-none">Man</a>
+                        <a href="#!dataSearch" id="searchMan" class="d-none">Search</a>
+                        <div ng-view></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Scripts-->
+<script src="assets/js/jquery-3.6.0.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/scripts.js"></script>
+</body>
+</html>

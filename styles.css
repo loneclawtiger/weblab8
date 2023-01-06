@@ -1,0 +1,166 @@
+body{
+    background: #252525;
+    overflow: auto;
+}
+.main-cont{
+    /*flex-wrap: nowrap;*/
+}
+.side-nav{
+    height: 100vh;
+    background-color: #181818;
+    transition: all 0.8s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.middle-form{
+    height: 100vh;
+    background-color: #252525;
+    transition: all 0.8s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+    padding: 0;
+}
+
+.middle-form .topBar {
+    height: 50px;
+    background-color: #696969;
+    width: 100%;
+}
+
+#profileImg{
+    object-fit: cover;
+    max-width: 3rem;
+}
+
+.login-form{
+    padding: 20px;
+    width: 40%;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 5px black;
+    transition: all 0.8s ease;
+    transform: translateY(40%);
+    opacity: 0;
+}
+
+#btnResp{
+    color: red;
+}
+
+.tabs .tab{
+    padding: 2em;
+    height: 250px;
+    box-shadow: 2px 2px 5px black;
+    background-color: #181818;
+    border-radius: 20px;
+}
+
+.tabs .tab:last-child{
+    height: 500px;
+}
+
+#tabProfImg{
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px black;
+}
+
+
+.inputField input{
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid white;
+}
+.inputField input:focus{
+    background-color: transparent;
+    color: white;
+}
+
+
+.btnMen{
+    color: white;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin-top: 1.2em;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 2px 2px 5px black;
+    transition: all 0.4s ease;
+}
+
+.btnMen button {
+    background: transparent;
+    border: none;
+    color: white;
+    transition: all 0.4s ease;
+    width: 100%;
+}
+
+.menu-btns{
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-top: 5em;
+}
+
+
+.btnMen:hover{
+    box-shadow: 2px 0px 2px black;
+}
+
+
+@media (max-width: 1171px){
+    .main-cont{
+        flex-direction: column;
+    }
+
+    .side-nav{
+        flex-direction: row;
+        height: 100px;
+        width: 100%;
+    }
+
+    .middle-form{
+        width: 100%;
+    }
+
+    .menu-btns{
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .btnMen{
+        width: 30%;
+    }
+}
+
+@media (max-width: 674px) {
+    .login-form{
+        width: 80%;
+    }
+
+    .d-xs-none{
+        display: none;
+    }
+
+    .btnMen{
+        width: 25%;
+    }
+    .col-xs-10{
+        width: 83.33%;
+    }
+
+    #tabProfImg{
+        width: 50%;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
+}
